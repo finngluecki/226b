@@ -8,21 +8,23 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.*?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="981.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Calendar.edit">
   <children>
-    <Button layoutX="17.0" layoutY="27.0" mnemonicParsing="false" text="PDF Export" />
-    <TextField layoutX="190.0" layoutY="27.0" prefHeight="25.0" prefWidth="46.0" />
-    <Label layoutX="101.0" layoutY="31.0" text="Jahr auswählen:" />
+    <TextField fx:id="year" layoutX="108.0" layoutY="27.0" onAction="#year" prefHeight="25.0" prefWidth="46.0" />
+    <Label layoutX="19.0" layoutY="31.0" text="Jahr auswählen:" />
     <TabPane layoutX="14.0" layoutY="60.0" prefHeight="470.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
       <tabs>
         <Tab text="Templates">
@@ -42,18 +44,13 @@
             </Pane>
           </content>
         </Tab>
-        <Tab text="Bilder hochladen">
-          <content>
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-          </content>
-        </Tab>
       </tabs>
     </TabPane>
-    <TabPane layoutX="225.0" layoutY="60.0" prefHeight="470.0" prefWidth="740.0" tabClosingPolicy="UNAVAILABLE">
+    <TabPane layoutX="227.0" layoutY="60.0" prefHeight="470.0" prefWidth="740.0" tabClosingPolicy="UNAVAILABLE">
       <tabs>
         <Tab text="Januar">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="januar" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -115,7 +112,7 @@
         </Tab>
         <Tab text="Februar">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="februar" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -156,12 +153,12 @@
                 <Line endX="100.0" endY="50.0" layoutX="207.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="350.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="492.0" layoutY="391.0" startX="100.0" startY="5.0" />
-                <ImageView id="pic2" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
+                <ImageView id="pic2" fx:id="pic4" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
                 </ImageView>
-                <ImageView id="pic1" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
+                <ImageView id="pic1" fx:id="pic3" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
@@ -173,7 +170,7 @@
         </Tab>
         <Tab text="März">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="maerz" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -214,12 +211,12 @@
                 <Line endX="100.0" endY="50.0" layoutX="207.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="350.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="492.0" layoutY="391.0" startX="100.0" startY="5.0" />
-                <ImageView id="pic2" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
+                <ImageView id="pic2" fx:id="pic6" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
                 </ImageView>
-                <ImageView id="pic1" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
+                <ImageView id="pic1" fx:id="pic5" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
@@ -231,7 +228,7 @@
         </Tab>
         <Tab text="April">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="april" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -272,12 +269,12 @@
                 <Line endX="100.0" endY="50.0" layoutX="207.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="350.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="492.0" layoutY="391.0" startX="100.0" startY="5.0" />
-                <ImageView id="pic2" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
+                <ImageView id="pic2" fx:id="pic8" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
                 </ImageView>
-                <ImageView id="pic1" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
+                <ImageView id="pic1" fx:id="pic7" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
@@ -289,7 +286,7 @@
         </Tab>
         <Tab text="Mai">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="mai" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -330,12 +327,12 @@
                 <Line endX="100.0" endY="50.0" layoutX="207.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="350.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="492.0" layoutY="391.0" startX="100.0" startY="5.0" />
-                <ImageView id="pic2" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
+                <ImageView id="pic2" fx:id="pic10" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
                 </ImageView>
-                <ImageView id="pic1" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
+                <ImageView id="pic1" fx:id="pic9" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
@@ -347,7 +344,7 @@
         </Tab>
         <Tab text="Juni">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="juni" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -388,12 +385,12 @@
                 <Line endX="100.0" endY="50.0" layoutX="207.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="350.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="492.0" layoutY="391.0" startX="100.0" startY="5.0" />
-                <ImageView id="pic2" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
+                <ImageView id="pic2" fx:id="pic12" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
                 </ImageView>
-                <ImageView id="pic1" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
+                <ImageView id="pic1" fx:id="pic11" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
@@ -405,7 +402,7 @@
         </Tab>
         <Tab text="Juli">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="juli" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -446,12 +443,12 @@
                 <Line endX="100.0" endY="50.0" layoutX="207.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="350.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="492.0" layoutY="391.0" startX="100.0" startY="5.0" />
-                <ImageView id="pic2" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
+                <ImageView id="pic2" fx:id="pic14" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
                 </ImageView>
-                <ImageView id="pic1" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
+                <ImageView id="pic1" fx:id="pic13" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
@@ -463,7 +460,7 @@
         </Tab>
         <Tab text="August">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="august" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -504,12 +501,12 @@
                 <Line endX="100.0" endY="50.0" layoutX="207.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="350.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="492.0" layoutY="391.0" startX="100.0" startY="5.0" />
-                <ImageView id="pic2" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
+                <ImageView id="pic2" fx:id="pic16" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
                 </ImageView>
-                <ImageView id="pic1" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
+                <ImageView id="pic1" fx:id="pic15" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
@@ -521,7 +518,7 @@
         </Tab>
         <Tab text="September">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="september" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -562,12 +559,12 @@
                 <Line endX="100.0" endY="50.0" layoutX="207.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="350.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="492.0" layoutY="391.0" startX="100.0" startY="5.0" />
-                <ImageView id="pic2" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
+                <ImageView id="pic2" fx:id="pic18" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
                 </ImageView>
-                <ImageView id="pic1" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
+                <ImageView id="pic1" fx:id="pic17" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
@@ -579,7 +576,7 @@
         </Tab>
         <Tab text="Oktober">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="oktober" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -620,12 +617,12 @@
                 <Line endX="100.0" endY="50.0" layoutX="207.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="350.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="492.0" layoutY="391.0" startX="100.0" startY="5.0" />
-                <ImageView id="pic2" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
+                <ImageView id="pic2" fx:id="pic20" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
                 </ImageView>
-                <ImageView id="pic1" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
+                <ImageView id="pic1" fx:id="pic19" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
@@ -637,7 +634,7 @@
         </Tab>
         <Tab text="November">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="november" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -678,12 +675,12 @@
                 <Line endX="100.0" endY="50.0" layoutX="207.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="350.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="492.0" layoutY="391.0" startX="100.0" startY="5.0" />
-                <ImageView id="pic2" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
+                <ImageView id="pic2" fx:id="pic22" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
                 </ImageView>
-                <ImageView id="pic1" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
+                <ImageView id="pic1" fx:id="pic21" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
@@ -695,7 +692,7 @@
         </Tab>
         <Tab text="Dezember">
           <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane fx:id="dezember" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Label layoutX="24.0" layoutY="400.0" text="Mo" />
                 <Label layoutX="47.0" layoutY="400.0" text="Di" />
@@ -736,12 +733,12 @@
                 <Line endX="100.0" endY="50.0" layoutX="207.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="350.0" layoutY="391.0" startX="100.0" startY="5.0" />
                 <Line endX="100.0" endY="50.0" layoutX="492.0" layoutY="391.0" startX="100.0" startY="5.0" />
-                <ImageView id="pic2" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
+                <ImageView id="pic2" fx:id="pic24" fitHeight="335.0" fitWidth="720.0" layoutX="10.0" layoutY="50.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
                 </ImageView>
-                <ImageView id="pic1" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
+                <ImageView id="pic1" fx:id="pic23" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="91.0" onMouseClicked="#upload" pickOnBounds="false" preserveRatio="false" smooth="false" visible="false">
                   <image>
                     <Image url="@../../../../Pictures/click.png" />
                   </image>
